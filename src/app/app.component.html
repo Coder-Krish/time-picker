@@ -1,20 +1,21 @@
+<label for="">Select Time(24hrs system)</label>
 <div class="timeBox">
-  <input type="text" [(ngModel)]="selectedTime" (click)="showHideBox()" (ngModelChange)="validateTime()">
-  <span *ngIf="wrongInput"> Time format not correct</span>
+  <input type="text" id="id_input_selectedTime" #showHideTimeBox [(ngModel)]="selectedTime" (click)="showHideBox()" (ngModelChange)="validateTime()">
+  <span *ngIf="wrongInput" style="color: red;"> Time format not correct</span>
 
-  <div class="Box" *ngIf="showBox">
+  <div class="Box" id="id_div_TimeBox" *ngIf="showBox">
     <div class="outerDiv">
-      <div class="innerDiv">
+      <div class="innerDiv" #hoursTimeBox>
         <div *ngFor="let hours of hoursArray" (click)="selectHours(hours)">{{hours}}</div>
       </div>
       
-      <div class="innerDiv">
+      <div class="innerDiv" #minutesTimeBox>
         <div *ngFor="let minutes of minutesArray" (click)="selectMinutes(minutes)">{{minutes}}</div>
       </div>
     </div>
 
     <div class="btnDiv">
-      <input type="button" value="cancel" (click)="showHideBox()">
+      <input type="button" value="cancel" (click)="showHideBox();clearTime();">
       <input type="button" value="set" (click)="SetTime()">
     </div>
   </div>
