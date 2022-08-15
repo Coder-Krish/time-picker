@@ -1,0 +1,41 @@
+.timeBox{
+    position: relative;
+    width: 145px;
+    
+  }
+  .Box{
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 25px;
+    width: 100%;
+    background-color: white;
+    font-size: 30px;
+    box-shadow: 0px 1px 2px 1px #ccc;
+    
+  }
+  .outerDiv{
+    display: flex;
+    justify-content: space-between;
+  }
+  .innerDiv{
+    display: flex;
+    flex-direction: column;
+    height: 270px;
+    overflow-y: scroll;
+  }
+
+  .btnDiv{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .innerDiv div{
+    padding: 10px;
+  }
+
+  .innerDiv div:hover{
+    cursor: pointer;
+    background-color: blue;
+    border-radius: 3px;
+  }
